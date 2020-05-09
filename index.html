@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!--
+    Copyright 2020- , jnguiot <https://github.com/jnguiot> / F4GEH
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders X be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.
+    Except as contained in this notice, the name of the <copyright holders> shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the <copyright holders>.
+    -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <div id="header">
+        <h1><img src="logo.svg" alt="CIWA" style="fill: white; color: white;"/></h1>
+        <h2>CW for Amateur</h2>
+    </div>
+
+    <div id="prompter"><div id="shader"></div></div>
+
+    <div id="controls">
+        <img src="ionicons/refresh-circle-outline.svg" alt="Reset" title="Reset" onclick="reset()" class="smaller"/>
+        <img src="ionicons/play-circle-outline.svg" alt="Play" title="Play"  onclick="start()"/>
+        <img src="ionicons/pause-circle-outline.svg" alt="Pause" title="Pause"  onclick="stop()" class="smaller"/>
+    </div>
+
+    <div class="cursors" id="volume">Volume  <span id="volume_display">100</span><br/>
+        <input type="range" min="0" max="100" value="100" class="slider" oninput="setVolume(this.value)">
+    </div>
+    <div class="cursors" id="wpm">Word per minute  <span id="wpm_display">15</span><br/>
+        <input type="range" min="1" max="35" value="15" class="slider" oninput="setWPM(this.value)">
+    </div>
+    <div class="cursors" id="texte">Texte <br/>
+        <textarea id="data">CQ CQ CQ DE F4GEH F4GEH F4GEH CQ CQ CQ DE F4GEH F4GEH F4GEH CQ CQ CQ DE F4GEH F4GEH F4GEH AR K</textarea>
+    </div>
+
+</div>
+<div id="footer">By F4GEH - MIT licenced - <a href="">Github</a></div>
+<audio src="beep5.mp3" id="audio" loop></audio>
+</body>
+</html>
